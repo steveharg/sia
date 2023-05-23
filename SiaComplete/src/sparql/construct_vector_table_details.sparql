@@ -1,0 +1,30 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX abc: <http://example.org/abc#>
+PREFIX seq: <http://example.org/seq#>
+PREFIX sia: <http://example.org/sia#>
+
+CONSTRUCT { ?vte sia:dimVal _:dv .
+			_:dv sia:dimension ?dim;
+			     sia:value ?val}
+WHERE
+{
+	?vte rdf:type sia:VectorTableElement .
+	?vte sia:fromDatapoint ?datapoint1 .
+	?vte sia:toDatapoint ?datapoint2 .
+	?datapoint1 rdf:type sia:Datapoint .
+	?datapoint1 sia:dimVal ?dv1 .
+	?dv1 sia:dimension ?dim .
+	?dv1 sia:value ?val1 .
+	?datapoint2 rdf:type sia:Datapoint .
+	?datapoint2 sia:dimVal ?dv2 .
+	?dv2 sia:dimension ?dim .
+	?dv2 sia:value ?val2 .
+	?datapoint1 sia:orderedIndex ?i1 .
+	?datapoint2 sia:orderedIndex ?i2 .
+	BIND (?val2 - ?val1 AS ?val)
+	FILTER ((?datapoint1 != ?datapoint2) && (?i1 < ?i2))
+}
+GROUP BY ?vte ?datapoint1 ?datapoint2 ?dim ?val

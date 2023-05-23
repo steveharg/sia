@@ -1,0 +1,21 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX abc: <http://example.org/abc#>
+PREFIX seq: <http://example.org/seq#>
+PREFIX sia: <http://example.org/sia#>
+
+CONSTRUCT { _:vte rdf:type sia:VectorTableElement;
+			sia:fromDatapoint ?datapoint1;
+			sia:toDatapoint ?datapoint2}
+WHERE
+{
+ 	?datapoint1 sia:memberOfOrderedSet ?bnode .
+ 	?datapoint2 sia:memberOfOrderedSet ?bnode .
+	?bnode a sia:OrderedSet .
+	?datapoint1 sia:orderedIndex ?i1 .
+	?datapoint2 sia:orderedIndex ?i2
+	FILTER ((?datapoint1 != ?datapoint2) && (?i1 < ?i2))
+}
+GROUP BY ?datapoint1 ?datapoint2

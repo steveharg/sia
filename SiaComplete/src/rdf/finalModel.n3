@@ -1,0 +1,678 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix abc:     <http://example.org/abc#> .
+@prefix sia:     <http://example.org/sia#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+sia:toDatapoint
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf sia:toDatapoint , owl:topObjectProperty ;
+      owl:equivalentProperty
+              sia:toDatapoint ;
+      owl:propertyDisjointWith
+              owl:bottomObjectProperty .
+
+_:b1  a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 0.0e0 ;
+      =       _:b1 .
+
+_:b2  a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b3 , _:b4 ;
+      sia:directlyFollows _:b5 ;
+      sia:follows _:b6 , _:b7 , _:b8 , _:b5 , _:b9 , _:b10 , _:b11 , _:b12 , _:b13 , _:b14 , _:b15 , _:b16 ;
+      sia:fromDatapoint sia:A ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "12"^^xsd:int ;
+      sia:precedes _:b18 , _:b19 ;
+      sia:toDatapoint sia:E ;
+      =       _:b2 .
+
+sia:precedes
+      a       owl:TransitiveProperty , owl:ObjectProperty ;
+      rdfs:domain sia:OrderableThing ;
+      rdfs:range sia:OrderableThing ;
+      rdfs:subPropertyOf sia:precedes , owl:topObjectProperty ;
+      owl:equivalentProperty
+              sia:precedes ;
+      owl:inverseOf sia:follows ;
+      owl:propertyDisjointWith
+              owl:bottomObjectProperty .
+
+_:b20
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b20 .
+
+_:b9  a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b21 , _:b22 ;
+      sia:directlyFollows _:b6 ;
+      sia:follows _:b6 , _:b10 , _:b12 , _:b13 ;
+      sia:fromDatapoint sia:B ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "4"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b7 , _:b8 , _:b5 , _:b11 , _:b19 , _:b14 , _:b15 , _:b16 ;
+      sia:toDatapoint sia:C ;
+      =       _:b9 .
+
+sia:dvB2
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value "3"^^xsd:double ;
+      =       sia:dvB2 .
+
+sia:F
+      a       sia:Datapoint , sia:OrderableThing , owl:Thing ;
+      sia:dimVal sia:dvF2 , sia:dvF1 ;
+      sia:directlyFollows sia:E ;
+      sia:follows sia:A , sia:D , sia:E , sia:B , sia:C ;
+      sia:memberOfOrderedSet
+              _:b23 ;
+      sia:orderedIndex "5"^^xsd:int ;
+      =       sia:F .
+
+sia:dvA2
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value "1"^^xsd:double ;
+      =       sia:dvA2 .
+
+_:b24
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 0.0e0 ;
+      =       _:b24 .
+
+sia:orderedIndex
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty , sia:orderedIndex ;
+      owl:equivalentProperty
+              sia:orderedIndex ;
+      owl:propertyDisjointWith
+              owl:bottomDataProperty .
+
+_:b13
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b25 , _:b24 ;
+      sia:directlyFollows _:b10 ;
+      sia:follows _:b10 , _:b12 ;
+      sia:fromDatapoint sia:A ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "2"^^xsd:int , 2 ;
+      sia:precedes _:b2 , _:b18 , _:b6 , _:b7 , _:b8 , _:b5 , _:b9 , _:b11 , _:b19 , _:b14 , _:b15 , _:b16 ;
+      sia:toDatapoint sia:B ;
+      =       _:b13 .
+
+_:b7  a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b26 , _:b27 ;
+      sia:directlyFollows _:b9 ;
+      sia:follows _:b6 , _:b9 , _:b10 , _:b12 , _:b13 ;
+      sia:fromDatapoint sia:B ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "5"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b8 , _:b5 , _:b11 , _:b19 , _:b14 , _:b15 , _:b16 ;
+      sia:toDatapoint sia:D ;
+      =       _:b7 .
+
+sia:dimVal
+      a       owl:ObjectProperty ;
+      rdfs:range sia:DimensionValue ;
+      rdfs:subPropertyOf sia:dimVal , owl:topObjectProperty ;
+      owl:equivalentProperty
+              sia:dimVal ;
+      owl:propertyDisjointWith
+              owl:bottomObjectProperty .
+
+_:b28
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 0.0e0 ;
+      =       _:b28 .
+
+_:b29
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 2.0e0 , "2"^^xsd:double ;
+      =       _:b29 .
+
+_:b30
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value -1.0e0 ;
+      =       _:b30 .
+
+_:b31
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b31 .
+
+sia:B
+      a       sia:Datapoint , sia:OrderableThing , owl:Thing ;
+      sia:dimVal sia:dvB2 , sia:dvB1 ;
+      sia:directlyFollows sia:A ;
+      sia:follows sia:A ;
+      sia:memberOfOrderedSet
+              _:b23 ;
+      sia:orderedIndex "1"^^xsd:int , 1 ;
+      sia:precedes sia:D , sia:E , sia:F , sia:C ;
+      =       sia:B .
+
+_:b32
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b32 .
+
+sia:DimensionValue
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      owl:disjointWith owl:Nothing ;
+      owl:equivalentClass sia:DimensionValue .
+
+_:b33
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 2.0e0 , "2"^^xsd:double ;
+      =       _:b33 .
+
+sia:dvD1
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value "2"^^xsd:double ;
+      =       sia:dvD1 .
+
+_:b34
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b34 .
+
+_:b5  a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b35 , _:b36 ;
+      sia:directlyFollows _:b8 ;
+      sia:follows _:b6 , _:b7 , _:b8 , _:b9 , _:b10 , _:b11 , _:b12 , _:b13 , _:b14 , _:b15 , _:b16 ;
+      sia:fromDatapoint sia:C ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "11"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b19 ;
+      sia:toDatapoint sia:F ;
+      =       _:b5 .
+
+_:b10
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b28 , _:b37 ;
+      sia:directlyFollows _:b12 ;
+      sia:follows _:b12 ;
+      sia:fromDatapoint sia:D ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "1"^^xsd:int , 1 ;
+      sia:precedes _:b2 , _:b18 , _:b8 , _:b5 , _:b9 , _:b19 , _:b11 , _:b13 , _:b15 , _:b6 , _:b7 , _:b14 , _:b16 ;
+      sia:toDatapoint sia:E ;
+      =       _:b10 .
+
+sia:follows
+      a       owl:TransitiveProperty , owl:ObjectProperty ;
+      rdfs:domain sia:OrderableThing ;
+      rdfs:range sia:OrderableThing ;
+      rdfs:subPropertyOf sia:follows , owl:topObjectProperty ;
+      owl:equivalentProperty
+              sia:follows ;
+      owl:inverseOf sia:precedes ;
+      owl:propertyDisjointWith
+              owl:bottomObjectProperty .
+
+sia:OrderedSet
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      owl:disjointWith owl:Nothing ;
+      owl:equivalentClass sia:OrderedSet .
+
+_:b19
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b30 , _:b38 ;
+      sia:directlyFollows _:b2 ;
+      sia:follows _:b2 , _:b8 , _:b5 , _:b9 , _:b10 , _:b11 , _:b12 , _:b13 , _:b15 , _:b6 , _:b7 , _:b14 , _:b16 ;
+      sia:fromDatapoint sia:B ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "13"^^xsd:int ;
+      sia:precedes _:b18 ;
+      sia:toDatapoint sia:F ;
+      =       _:b19 .
+
+sia:dvE1
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value "2"^^xsd:double ;
+      =       sia:dvE1 .
+
+_:b15
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b39 , _:b40 ;
+      sia:directlyFollows _:b14 ;
+      sia:follows _:b6 , _:b7 , _:b9 , _:b10 , _:b12 , _:b13 , _:b14 ;
+      sia:fromDatapoint sia:A ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "7"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b8 , _:b5 , _:b11 , _:b19 , _:b16 ;
+      sia:toDatapoint sia:C ;
+      =       _:b15 .
+
+_:b6  a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b29 , _:b41 ;
+      sia:directlyFollows _:b13 ;
+      sia:follows _:b10 , _:b12 , _:b13 ;
+      sia:fromDatapoint sia:C ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "3"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b7 , _:b8 , _:b5 , _:b9 , _:b11 , _:b19 , _:b14 , _:b15 , _:b16 ;
+      sia:toDatapoint sia:E ;
+      =       _:b6 .
+
+sia:dvC2
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value "1"^^xsd:double ;
+      =       sia:dvC2 .
+
+_:b25
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 2.0e0 , "2"^^xsd:double ;
+      =       _:b25 .
+
+owl:Thing
+      a       owl:Class ;
+      owl:complementOf owl:Nothing ;
+      owl:disjointWith owl:Nothing ;
+      owl:equivalentClass owl:Thing .
+
+_:b26
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b26 .
+
+sia:fromDatapoint
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf sia:fromDatapoint , owl:topObjectProperty ;
+      owl:equivalentProperty
+              sia:fromDatapoint ;
+      owl:propertyDisjointWith
+              owl:bottomObjectProperty .
+
+_:b35
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b35 .
+
+_:b38
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 2.0e0 , "2"^^xsd:double ;
+      =       _:b38 .
+
+sia:dvF1
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value "3"^^xsd:double ;
+      =       sia:dvF1 .
+
+sia:C
+      a       sia:Datapoint , sia:OrderableThing , owl:Thing ;
+      sia:dimVal sia:dvC2 , sia:dvC1 ;
+      sia:directlyFollows sia:B ;
+      sia:follows sia:A , sia:B ;
+      sia:memberOfOrderedSet
+              _:b23 ;
+      sia:orderedIndex "2"^^xsd:int , 2 ;
+      sia:precedes sia:D , sia:E , sia:F ;
+      =       sia:C .
+
+_:b42
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value -1.0e0 ;
+      =       _:b42 .
+
+_:b37
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b37 .
+
+sia:dvD2
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value "2"^^xsd:double ;
+      =       sia:dvD2 .
+
+sia:Datapoint
+      a       owl:Class ;
+      rdfs:subClassOf sia:OrderableThing , owl:Thing ;
+      owl:disjointWith owl:Nothing ;
+      owl:equivalentClass sia:Datapoint .
+
+_:b8  a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b20 , _:b43 ;
+      sia:directlyFollows _:b16 ;
+      sia:follows _:b6 , _:b7 , _:b9 , _:b10 , _:b11 , _:b12 , _:b13 , _:b14 , _:b15 , _:b16 ;
+      sia:fromDatapoint sia:A ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "10"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b5 , _:b19 ;
+      sia:toDatapoint sia:D ;
+      =       _:b8 .
+
+_:b3  a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b3 .
+
+sia:D
+      a       sia:Datapoint , sia:OrderableThing , owl:Thing ;
+      sia:dimVal sia:dvD1 , sia:dvD2 ;
+      sia:directlyFollows sia:C ;
+      sia:follows sia:A , sia:B , sia:C ;
+      sia:memberOfOrderedSet
+              _:b23 ;
+      sia:orderedIndex "3"^^xsd:int ;
+      sia:precedes sia:E , sia:F ;
+      =       sia:D .
+
+sia:value
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf sia:value , owl:topDataProperty ;
+      owl:equivalentProperty
+              sia:value ;
+      owl:propertyDisjointWith
+              owl:bottomDataProperty .
+
+sia:dimension
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty , sia:dimension ;
+      owl:equivalentProperty
+              sia:dimension ;
+      owl:propertyDisjointWith
+              owl:bottomDataProperty .
+
+_:b11
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b44 , _:b32 ;
+      sia:directlyFollows _:b15 ;
+      sia:follows _:b6 , _:b7 , _:b9 , _:b10 , _:b12 , _:b13 , _:b14 , _:b15 ;
+      sia:fromDatapoint sia:B ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "8"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b8 , _:b5 , _:b19 , _:b16 ;
+      sia:toDatapoint sia:E ;
+      =       _:b11 .
+
+sia:dvE2
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value "3"^^xsd:double ;
+      =       sia:dvE2 .
+
+_:b45
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b45 .
+
+sia:memberOfOrderedSet
+      a       owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty , sia:memberOfOrderedSet ;
+      owl:equivalentProperty
+              sia:memberOfOrderedSet ;
+      owl:propertyDisjointWith
+              owl:bottomObjectProperty .
+
+_:b36
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b36 .
+
+_:b22
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b22 .
+
+sia:directlyFollows
+      a       owl:ObjectProperty ;
+      rdfs:domain sia:OrderableThing ;
+      rdfs:range sia:OrderableThing ;
+      rdfs:subPropertyOf sia:directlyFollows , sia:follows , owl:topObjectProperty ;
+      owl:equivalentProperty
+              sia:directlyFollows ;
+      owl:propertyDisjointWith
+              owl:bottomObjectProperty .
+
+_:b44
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 0.0e0 ;
+      =       _:b44 .
+
+sia:OrderableThing
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      owl:disjointWith owl:Nothing ;
+      owl:equivalentClass sia:OrderableThing .
+
+_:b39
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 0.0e0 ;
+      =       _:b39 .
+
+owl:bottomObjectProperty
+      a       owl:ObjectProperty , owl:IrreflexiveProperty , owl:AsymmetricProperty , owl:SymmetricProperty ;
+      rdfs:domain sia:OrderableThing , sia:DimensionValue ;
+      rdfs:range sia:OrderableThing , sia:DimensionValue ;
+      rdfs:subPropertyOf sia:toDatapoint , sia:directlyFollows , sia:precedes , sia:dimVal , owl:bottomObjectProperty , sia:fromDatapoint , sia:follows , owl:topObjectProperty , sia:memberOfOrderedSet ;
+      owl:equivalentProperty
+              owl:bottomObjectProperty ;
+      owl:propertyDisjointWith
+              sia:toDatapoint , sia:directlyFollows , sia:precedes , sia:dimVal , owl:bottomObjectProperty , sia:fromDatapoint , sia:follows , owl:topObjectProperty , sia:memberOfOrderedSet .
+
+sia:dvC1
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value "2"^^xsd:double ;
+      =       sia:dvC1 .
+
+sia:dvF2
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value "2"^^xsd:double ;
+      =       sia:dvF2 .
+
+owl:topDataProperty
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      owl:equivalentProperty
+              owl:topDataProperty ;
+      owl:propertyDisjointWith
+              owl:bottomDataProperty .
+
+owl:topObjectProperty
+      a       owl:TransitiveProperty , owl:ObjectProperty , owl:SymmetricProperty , owl:ReflexiveProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      owl:equivalentProperty
+              owl:topObjectProperty ;
+      owl:propertyDisjointWith
+              owl:bottomObjectProperty .
+
+_:b41
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 0.0e0 ;
+      =       _:b41 .
+
+_:b4  a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 2.0e0 , "2"^^xsd:double ;
+      =       _:b4 .
+
+owl:Nothing
+      a       owl:Class ;
+      rdfs:subClassOf sia:Datapoint , sia:OrderableThing , owl:Thing , sia:OrderedSet , sia:VectorTableElement , sia:DimensionValue ;
+      owl:complementOf owl:Thing ;
+      owl:disjointWith sia:Datapoint , sia:OrderableThing , owl:Thing , sia:OrderedSet , sia:VectorTableElement , sia:DimensionValue , owl:Nothing ;
+      owl:equivalentClass owl:Nothing .
+
+_:b16
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b1 , _:b45 ;
+      sia:directlyFollows _:b11 ;
+      sia:follows _:b6 , _:b7 , _:b9 , _:b10 , _:b11 , _:b12 , _:b13 , _:b14 , _:b15 ;
+      sia:fromDatapoint sia:D ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "9"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b8 , _:b5 , _:b19 ;
+      sia:toDatapoint sia:F ;
+      =       _:b16 .
+
+_:b18
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b33 , _:b31 ;
+      sia:directlyFollows _:b19 ;
+      sia:follows _:b2 , _:b8 , _:b5 , _:b9 , _:b10 , _:b19 , _:b11 , _:b12 , _:b13 , _:b15 , _:b6 , _:b7 , _:b14 , _:b16 ;
+      sia:fromDatapoint sia:A ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "14"^^xsd:int ;
+      sia:toDatapoint sia:F ;
+      =       _:b18 .
+
+_:b23
+      a       owl:Thing , sia:OrderedSet ;
+      =       _:b23 .
+
+sia:E
+      a       sia:Datapoint , sia:OrderableThing , owl:Thing ;
+      sia:dimVal sia:dvE2 , sia:dvE1 ;
+      sia:directlyFollows sia:D ;
+      sia:follows sia:A , sia:D , sia:B , sia:C ;
+      sia:memberOfOrderedSet
+              _:b23 ;
+      sia:orderedIndex "4"^^xsd:int ;
+      sia:precedes sia:F ;
+      =       sia:E .
+
+_:b21
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value -2.0e0 ;
+      =       _:b21 .
+
+sia:dvB1
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value "1"^^xsd:double ;
+      =       sia:dvB1 .
+
+_:b12
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b46 , _:b47 ;
+      sia:fromDatapoint sia:C ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "0"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b8 , _:b5 , _:b9 , _:b10 , _:b19 , _:b11 , _:b13 , _:b15 , _:b6 , _:b7 , _:b14 , _:b16 ;
+      sia:toDatapoint sia:D ;
+      =       _:b12 .
+
+_:b40
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b40 .
+
+_:b27
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value -1.0e0 ;
+      =       _:b27 .
+
+owl:bottomDataProperty
+      a       owl:DatatypeProperty ;
+      rdfs:subPropertyOf sia:value , owl:topDataProperty , sia:dimension , sia:orderedIndex , owl:bottomDataProperty ;
+      owl:equivalentProperty
+              owl:bottomDataProperty ;
+      owl:propertyDisjointWith
+              sia:value , owl:topDataProperty , sia:dimension , sia:orderedIndex , owl:bottomDataProperty .
+
+sia:dvA1
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value "1"^^xsd:double ;
+      =       sia:dvA1 .
+
+sia:A
+      a       sia:Datapoint , sia:OrderableThing , owl:Thing ;
+      sia:dimVal sia:dvA2 , sia:dvA1 ;
+      sia:memberOfOrderedSet
+              _:b23 ;
+      sia:orderedIndex "0"^^xsd:int ;
+      sia:precedes sia:D , sia:E , sia:F , sia:B , sia:C ;
+      =       sia:A .
+
+_:b17
+      a       owl:Thing , sia:OrderedSet ;
+      =       _:b17 .
+
+_:b46
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 0.0e0 ;
+      =       _:b46 .
+
+_:b43
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 1 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b43 .
+
+sia:VectorTableElement
+      a       owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      owl:disjointWith owl:Nothing ;
+      owl:equivalentClass sia:VectorTableElement .
+
+_:b14
+      a       sia:OrderableThing , owl:Thing , sia:VectorTableElement ;
+      sia:dimVal _:b34 , _:b42 ;
+      sia:directlyFollows _:b7 ;
+      sia:follows _:b6 , _:b7 , _:b9 , _:b10 , _:b12 , _:b13 ;
+      sia:fromDatapoint sia:E ;
+      sia:memberOfOrderedSet
+              _:b17 ;
+      sia:orderedIndex "6"^^xsd:int ;
+      sia:precedes _:b2 , _:b18 , _:b8 , _:b5 , _:b11 , _:b19 , _:b15 , _:b16 ;
+      sia:toDatapoint sia:F ;
+      =       _:b14 .
+
+_:b47
+      a       owl:Thing , sia:DimensionValue ;
+      sia:dimension 2 ;
+      sia:value 1.0e0 , "1"^^xsd:double ;
+      =       _:b47 .

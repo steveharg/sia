@@ -1,0 +1,82 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix abc:     <http://example.org/abc#> .
+@prefix sia:     <http://example.org/sia#> .
+
+sia:OrderableThing a owl:Class.
+sia:Datapoint rdfs:subClassOf sia:OrderableThing.
+sia:DimensionValue a owl:Class .
+
+sia:dimVal rdfs:range sia:DimensionValue .
+
+sia:follows rdfs:range sia:OrderableThing .
+sia:follows rdfs:domain sia:OrderableThing .
+sia:precedes owl:inverseOf sia:follows .
+
+sia:follows rdf:type owl:TransitiveProperty .
+sia:directlyFollows rdfs:subPropertyOf sia:follows .
+
+# The data
+
+sia:A sia:dimVal sia:dvA1;
+	sia:dimVal sia:dvA2;
+	a sia:Datapoint .
+	
+sia:dvA1 sia:dimension "1"^^xsd:integer;
+	sia:value "1"^^xsd:double.
+	
+sia:dvA2 sia:dimension "2"^^xsd:integer;
+	sia:value "1"^^xsd:double.
+	
+sia:B sia:dimVal sia:dvB1;
+	sia:dimVal sia:dvB2;
+	a sia:Datapoint .
+	
+sia:dvB1 sia:dimension "1"^^xsd:integer;
+	sia:value "1"^^xsd:double.
+	
+sia:dvB2 sia:dimension "2"^^xsd:integer;
+	sia:value "3"^^xsd:double.
+	
+sia:C sia:dimVal sia:dvC1;
+	sia:dimVal sia:dvC2;
+	a sia:Datapoint .
+	
+sia:dvC1 sia:dimension "1"^^xsd:integer;
+	sia:value "2"^^xsd:double.
+	
+sia:dvC2 sia:dimension "2"^^xsd:integer;
+	sia:value "1"^^xsd:double.
+	
+sia:D sia:dimVal sia:dvD1;
+	sia:dimVal sia:dvD2;
+	a sia:Datapoint .
+	
+sia:dvD1 sia:dimension "1"^^xsd:integer;
+	sia:value "2"^^xsd:double.
+	
+sia:dvD2 sia:dimension "2"^^xsd:integer;
+	sia:value "2"^^xsd:double.
+	
+sia:E sia:dimVal sia:dvE1;
+	sia:dimVal sia:dvE2;
+	a sia:Datapoint .
+	
+sia:dvE1 sia:dimension "1"^^xsd:integer;
+	sia:value "2"^^xsd:double.
+	
+sia:dvE2 sia:dimension "2"^^xsd:integer;
+	sia:value "3"^^xsd:double.
+	
+sia:F sia:dimVal sia:dvF1;
+	sia:dimVal sia:dvF2;
+	a sia:Datapoint .
+	
+sia:dvF1 sia:dimension "1"^^xsd:integer;
+	sia:value "3"^^xsd:double.
+	
+sia:dvF2 sia:dimension "2"^^xsd:integer;
+	sia:value "2"^^xsd:double.
+	

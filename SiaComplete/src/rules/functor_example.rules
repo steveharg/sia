@@ -1,0 +1,19 @@
+@prefix sia: <http://example.org/sia#>.
+
+[allID:
+(?C rdf:type owl:Restriction), (?C owl:onProperty ?P),
+(?C owl:allValuesFrom ?D)
+->
+(?C owl:equivalentClass all(?P, ?D))
+]
+
+[all2: (?C rdfs:subClassOf all(?P, ?D)) -> print('Rule for ', ?C)
+    [all1b: (?Y rdf:type ?D) <- (?X ?P ?Y), (?X rdf:type ?C) ] ]
+    
+[all3:
+(?S owl:owl:equivalentClass all(?P, ?D))
+makeTemp(?blankNode)
+->
+(?P rdf:type sia:MyP),
+(?D rdf:type sia:MyD)
+]
